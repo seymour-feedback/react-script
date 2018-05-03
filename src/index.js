@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import App from './components/App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const container = document.createElement('div');
+container.id = 'seemore-container';
+document.body.insertBefore(container, document.body.firstChild);
+
+const app = <App width={document.body.clientWidth} height={window.outerHeight} />;
+
+ReactDOM.render(
+  app,
+  container
+);
